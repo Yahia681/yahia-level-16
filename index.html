@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
 <title>𝖄𝖆𝖍𝖎𝖆 | Level 16 🎂</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -21,22 +19,21 @@ html{
 
 body{
   background:#050505;
-  color:white;
+  color:#fff;
   font-family:Arial, sans-serif;
   overflow-x:hidden;
 }
 
 /* الخلفية */
-
 .background{
   position:fixed;
   inset:0;
   z-index:-2;
-  background:radial-gradient(circle at top,#2a1239 0%,#100b18 40%,#050505 75%);
+  background:
+    radial-gradient(circle at top,#2a1239 0%,#100b18 40%,#050505 75%);
 }
 
 /* النجوم */
-
 .stars{
   position:fixed;
   inset:0;
@@ -59,14 +56,25 @@ body{
     opacity:.2;
     transform:scale(1);
   }
-
   to{
     opacity:1;
     transform:scale(1.8);
   }
 }
 
-/* شاشة البداية */
+/* ظهور العناصر */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= شاشة البداية ================= */
 
 .intro{
   min-height:100vh;
@@ -79,18 +87,6 @@ body{
   animation:fadeIn 1.5s ease;
 }
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
 .date{
   color:#d4af37;
   letter-spacing:5px;
@@ -101,13 +97,12 @@ body{
 .small-text{
   color:#aaa;
   font-size:18px;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 /* العداد */
-
 .countdown-box{
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 
 .countdown-title{
@@ -124,9 +119,9 @@ body{
 }
 
 .countdown div{
-  min-width:62px;
+  min-width:65px;
   padding:12px 7px;
-  border:1px solid rgba(212,175,55,.25);
+  border:1px solid rgba(212,175,55,.3);
   border-radius:14px;
   background:rgba(255,255,255,.04);
   backdrop-filter:blur(10px);
@@ -135,7 +130,7 @@ body{
 .countdown span{
   display:block;
   color:#fff2a8;
-  font-size:22px;
+  font-size:23px;
   font-weight:bold;
 }
 
@@ -147,7 +142,6 @@ body{
 
 .name{
   font-size:clamp(55px,12vw,120px);
-
   background:linear-gradient(
     90deg,
     #b8860b,
@@ -160,7 +154,6 @@ body{
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-
   margin-bottom:20px;
   letter-spacing:3px;
 
@@ -174,7 +167,6 @@ body{
 }
 
 /* زر البداية */
-
 .start-btn{
   border:none;
   padding:17px 38px;
@@ -190,9 +182,8 @@ body{
     #d4af37
   );
 
-  transition:.3s;
-
   box-shadow:0 0 25px rgba(212,175,55,.35);
+  transition:.3s;
 }
 
 .start-btn:hover{
@@ -200,7 +191,7 @@ body{
   box-shadow:0 0 45px rgba(212,175,55,.7);
 }
 
-/* صفحة الاحتفال */
+/* ================= الاحتفال ================= */
 
 .celebration{
   display:none;
@@ -225,7 +216,6 @@ body{
 }
 
 /* زر الموسيقى */
-
 .music-btn{
   position:fixed;
   top:20px;
@@ -240,7 +230,6 @@ body{
   border-radius:50px;
   font-size:14px;
   cursor:pointer;
-
   backdrop-filter:blur(10px);
   transition:.3s;
 }
@@ -251,7 +240,7 @@ body{
   color:#000;
 }
 
-/* الكيكة */
+/* ================= الكيكة ================= */
 
 .cake{
   margin-top:100px;
@@ -261,7 +250,6 @@ body{
 }
 
 /* الشموع */
-
 .candles{
   position:absolute;
   top:-70px;
@@ -275,13 +263,10 @@ body{
 .candle{
   width:10px;
   height:58px;
-
   background:linear-gradient(90deg,#fff,#d4af37);
-
   border-radius:5px;
   cursor:pointer;
   position:relative;
-
   transition:.3s;
 }
 
@@ -290,10 +275,8 @@ body{
 }
 
 /* النار */
-
 .flame{
   position:absolute;
-
   width:16px;
   height:24px;
 
@@ -306,7 +289,6 @@ body{
   );
 
   border-radius:60% 40% 60% 40%;
-
   top:-27px;
   left:-3px;
 
@@ -321,14 +303,12 @@ body{
   from{
     transform:scale(1) rotate(-3deg);
   }
-
   to{
     transform:scale(1.18) rotate(5deg);
   }
 }
 
 /* جسم الكيكة */
-
 .cake-top{
   width:280px;
   height:65px;
@@ -364,7 +344,6 @@ body{
   top:32px;
 
   border-radius:0 0 30px 30px;
-
   border:2px solid #d4af37;
 
   box-shadow:
@@ -372,25 +351,19 @@ body{
     0 15px 40px rgba(0,0,0,.5);
 }
 
-/* زر النفخ */
-
+/* زر إطفاء الشموع */
 .blow-btn{
   margin-top:40px;
-
   padding:15px 30px;
 
   border:1px solid rgba(212,175,55,.5);
-
   border-radius:50px;
 
   background:rgba(212,175,55,.12);
-
   color:#fff;
 
   font-size:17px;
-
   cursor:pointer;
-
   transition:.3s;
 }
 
@@ -401,18 +374,13 @@ body{
 }
 
 /* زر المفاجأة */
-
 .message-btn{
   display:none;
-
   margin-top:45px;
-
   padding:16px 32px;
 
   border:none;
-
   border-radius:30px;
-
   cursor:pointer;
 
   font-size:17px;
@@ -425,7 +393,6 @@ body{
   );
 
   color:#111;
-
   transition:.3s;
 }
 
@@ -434,22 +401,17 @@ body{
 }
 
 /* الرسالة */
-
 .message{
   display:none;
-
   margin-top:60px;
 
   padding:35px 25px;
-
   width:min(500px,100%);
 
   background:rgba(255,255,255,.05);
-
   border:1px solid rgba(212,175,55,.4);
 
   border-radius:25px;
-
   backdrop-filter:blur(15px);
 
   animation:fadeIn 1s ease;
@@ -468,7 +430,6 @@ body{
 }
 
 /* الكونفيتي */
-
 .confetti{
   position:fixed;
   width:10px;
@@ -479,7 +440,6 @@ body{
 }
 
 /* الموبايل */
-
 @media(max-width:500px){
 
   .countdown{
@@ -495,18 +455,18 @@ body{
     font-size:19px;
   }
 
+  .level{
+    font-size:20px;
+  }
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="background"></div>
-
 <div class="stars" id="stars"></div>
-
 
 <!-- شاشة البداية -->
 
@@ -519,7 +479,6 @@ body{
   <div class="small-text">
     Today is not just another day...
   </div>
-
 
   <!-- العداد -->
 
@@ -552,19 +511,13 @@ body{
       </div>
 
     </div>
-
   </div>
 
-
-  <h1 class="name">
-    𝖄𝖆𝖍𝖎𝖆
-  </h1>
-
+  <h1 class="name">𝖄𝖆𝖍𝖎𝖆</h1>
 
   <div class="level">
     ✦ Welcome To Level 16 ✦
   </div>
-
 
   <button class="start-btn" onclick="startCelebration()">
     🎉 Start The Celebration
@@ -581,21 +534,16 @@ body{
     🎵 Play Music
   </button>
 
-
+  <!-- ملف الأغنية -->
   <audio id="birthdayMusic" loop>
     <source src="birthday.mp3" type="audio/mpeg">
   </audio>
 
-
-  <h2>
-    🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆
-  </h2>
-
+  <h2>🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆</h2>
 
   <p>
     Make a wish... then blow out the candles 🕯️
   </p>
-
 
   <div class="cake">
 
@@ -607,69 +555,50 @@ body{
 
   </div>
 
-
   <button class="blow-btn" id="blowBtn" onclick="blowCandles()">
     💨 Blow Out The Candles
   </button>
-
 
   <button class="message-btn" id="messageBtn" onclick="showMessage()">
     🎁 Open Your Surprise
   </button>
 
-
   <div class="message" id="message">
 
-    <h3>
-      ✦ Welcome To Level 16 ✦
-    </h3>
+    <h3>✦ Welcome To Level 16 ✦</h3>
 
     <p>
-
       A new year has begun... 🎂
-
       <br><br>
 
       16 years of memories.
-
       <br>
 
       And a whole new chapter begins now.
-
       <br><br>
 
       New dreams. ✨
-
       <br>
 
       New challenges. 🚀
-
       <br>
 
       New memories. 🖤
-
       <br><br>
 
       💻 Keep building.
-
       <br>
 
       🔥 Keep creating.
-
       <br>
 
       🚀 Keep going.
-
       <br><br>
 
-      <strong>
-        This is your Level 16.
-      </strong>
-
+      <strong>This is your Level 16.</strong>
       <br><br>
 
       🎉 Happy Birthday, Yahia! 🎉
-
     </p>
 
   </div>
@@ -680,46 +609,33 @@ body{
 <script>
 
 /* النجوم */
-function startCelebration(){
+function createStars(){
 
-  // إخفاء شاشة البداية
-  document.getElementById("intro").style.display = "none";
+  const stars = document.getElementById("stars");
 
-  // إظهار صفحة الاحتفال
-  document.getElementById("celebration").style.display = "flex";
+  for(let i = 0; i < 80; i++){
 
-  // إنشاء الـ 16 شمعة
-  createCandles();
+    const star = document.createElement("div");
 
-  // تشغيل الأغنية تلقائياً بعد الضغط على Start
-  const music = document.getElementById("birthdayMusic");
-  const btn = document.getElementById("musicBtn");
+    star.className = "star";
 
-  music.play()
-  .then(function(){
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
 
-    btn.innerHTML = "⏸ Pause Music";
+    star.style.animationDelay = Math.random() * 2 + "s";
 
-  })
-  .catch(function(){
-
-    btn.innerHTML = "🎵 Play Music";
-
-  });
-
-}
-
-
+    stars.appendChild(star);
+  }
 }
 
 createStars();
 
 
 /* العداد التنازلي */
-
 function updateCountdown(){
 
-  const birthday = new Date("2026-09-18T00:00:00+03:00").getTime();
+  const birthday =
+    new Date("2026-09-18T00:00:00+03:00").getTime();
 
   const now = new Date().getTime();
 
@@ -734,7 +650,6 @@ function updateCountdown(){
     document.getElementById("seconds").innerHTML = "🔥";
 
     return;
-
   }
 
 
@@ -743,18 +658,18 @@ function updateCountdown(){
   );
 
   const hours = Math.floor(
-    (difference % (1000 * 60 * 60 * 24))
-    / (1000 * 60 * 60)
+    (difference % (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60)
   );
 
   const minutes = Math.floor(
-    (difference % (1000 * 60 * 60))
-    / (1000 * 60)
+    (difference % (1000 * 60 * 60)) /
+    (1000 * 60)
   );
 
   const seconds = Math.floor(
-    (difference % (1000 * 60))
-    / 1000
+    (difference % (1000 * 60)) /
+    1000
   );
 
 
@@ -769,7 +684,6 @@ function updateCountdown(){
 
   document.getElementById("seconds").innerHTML =
     String(seconds).padStart(2,"0");
-
 }
 
 updateCountdown();
@@ -777,7 +691,7 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 
-/* بدء الاحتفال */
+/* بدء الاحتفال + تشغيل الأغنية تلقائياً */
 
 function startCelebration(){
 
@@ -787,10 +701,34 @@ function startCelebration(){
 
   createCandles();
 
+
+  /* تشغيل الأغنية بعد الضغط */
+
+  const music =
+    document.getElementById("birthdayMusic");
+
+  const btn =
+    document.getElementById("musicBtn");
+
+
+  music.play()
+  .then(function(){
+
+    btn.innerHTML =
+      "⏸ Pause Music";
+
+  })
+  .catch(function(){
+
+    btn.innerHTML =
+      "🎵 Play Music";
+
+  });
+
 }
 
 
-/* إنشاء 16 شمعة */
+/* إنشاء الـ 16 شمعة */
 
 function createCandles(){
 
@@ -805,31 +743,25 @@ function createCandles(){
     const candle =
       document.createElement("div");
 
-    candle.className =
-      "candle";
+    candle.className = "candle";
 
 
     const flame =
       document.createElement("div");
 
-    flame.className =
-      "flame";
+    flame.className = "flame";
 
 
     candle.appendChild(flame);
 
 
     candle.onclick = function(){
-
       turnOffCandle(flame);
-
     };
 
 
     candles.appendChild(candle);
-
   }
-
 }
 
 
@@ -844,11 +776,10 @@ function turnOffCandle(flame){
   flame.style.display = "none";
 
   checkCandles();
-
 }
 
 
-/* التأكد من الشموع */
+/* التأكد من إطفاء جميع الشموع */
 
 function checkCandles(){
 
@@ -876,13 +807,11 @@ function checkCandles(){
       .style.display = "none";
 
     celebrationConfetti();
-
   }
-
 }
 
 
-/* إطفاء كل الشموع */
+/* إطفاء جميع الشموع */
 
 function blowCandles(){
 
@@ -906,11 +835,10 @@ function blowCandles(){
     checkCandles();
 
   },1400);
-
 }
 
 
-/* إظهار الرسالة */
+/* إظهار المفاجأة */
 
 function showMessage(){
 
@@ -918,6 +846,7 @@ function showMessage(){
     document.getElementById("message");
 
   message.style.display = "block";
+
 
   document.getElementById("messageBtn")
     .style.display = "none";
@@ -934,11 +863,10 @@ function showMessage(){
     });
 
   },200);
-
 }
 
 
-/* الموسيقى */
+/* تشغيل وإيقاف الموسيقى */
 
 function toggleMusic(){
 
@@ -964,17 +892,13 @@ function toggleMusic(){
 
     });
 
-  }
-
-  else{
+  }else{
 
     music.pause();
 
     btn.innerHTML =
       "🎵 Play Music";
-
   }
-
 }
 
 
@@ -996,8 +920,7 @@ function celebrationConfetti(){
     const piece =
       document.createElement("div");
 
-    piece.className =
-      "confetti";
+    piece.className = "confetti";
 
 
     piece.style.left =
@@ -1024,7 +947,6 @@ function celebrationConfetti(){
     const duration =
       Math.random() * 3 + 2;
 
-
     const rotate =
       Math.random() * 1080;
 
@@ -1032,7 +954,6 @@ function celebrationConfetti(){
     piece.animate(
 
       [
-
         {
           transform:
             "translateY(0) rotate(0deg)",
@@ -1046,7 +967,6 @@ function celebrationConfetti(){
             "deg)",
           opacity:0
         }
-
       ],
 
       {
@@ -1062,9 +982,7 @@ function celebrationConfetti(){
       piece.remove();
 
     },duration * 1000);
-
   }
-
 }
 
 </script>
