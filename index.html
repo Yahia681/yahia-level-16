@@ -9,10 +9,6 @@
 
 <style>
 
-/* =========================
-   BASIC
-========================= */
-
 *{
   margin:0;
   padding:0;
@@ -30,17 +26,13 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
+/* الخلفية */
 
 .background{
   position:fixed;
   inset:0;
   z-index:-2;
-
-  background:
-  radial-gradient(circle at top,#2a1239 0%,#100b18 40%,#050505 75%);
+  background:radial-gradient(circle at top,#2a1239 0%,#100b18 40%,#050505 75%);
 }
 
 /* النجوم */
@@ -63,7 +55,6 @@ body{
 }
 
 @keyframes twinkle{
-
   from{
     opacity:.2;
     transform:scale(1);
@@ -73,30 +64,22 @@ body{
     opacity:1;
     transform:scale(1.8);
   }
-
 }
 
-/* =========================
-   INTRO SCREEN
-========================= */
+/* شاشة البداية */
 
 .intro{
   min-height:100vh;
-
   display:flex;
   flex-direction:column;
-
   justify-content:center;
   align-items:center;
-
   text-align:center;
   padding:20px;
-
   animation:fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn{
-
   from{
     opacity:0;
     transform:translateY(20px);
@@ -106,33 +89,66 @@ body{
     opacity:1;
     transform:translateY(0);
   }
-
 }
 
 .date{
   color:#d4af37;
-
   letter-spacing:5px;
-
   font-size:14px;
-
   margin-bottom:25px;
 }
 
 .small-text{
   color:#aaa;
-
   font-size:18px;
-
   margin-bottom:15px;
 }
 
-.name{
+/* العداد */
 
+.countdown-box{
+  margin-bottom:25px;
+}
+
+.countdown-title{
+  color:#d4af37;
+  font-size:11px;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+
+.countdown div{
+  min-width:62px;
+  padding:12px 7px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(10px);
+}
+
+.countdown span{
+  display:block;
+  color:#fff2a8;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.countdown small{
+  color:#888;
+  font-size:9px;
+  text-transform:uppercase;
+}
+
+.name{
   font-size:clamp(55px,12vw,120px);
 
-  background:
-  linear-gradient(
+  background:linear-gradient(
     90deg,
     #b8860b,
     #fff2a8,
@@ -143,49 +159,31 @@ body{
 
   -webkit-background-clip:text;
   background-clip:text;
-
   color:transparent;
 
   margin-bottom:20px;
-
   letter-spacing:3px;
 
-  filter:
-  drop-shadow(
-    0 0 20px
-    rgba(212,175,55,.35)
-  );
-
+  filter:drop-shadow(0 0 20px rgba(212,175,55,.35));
 }
 
 .level{
   font-size:24px;
-
   color:#ddd;
-
   margin-bottom:40px;
 }
 
-/* =========================
-   START BUTTON
-========================= */
+/* زر البداية */
 
 .start-btn{
-
   border:none;
-
   padding:17px 38px;
-
   font-size:18px;
-
   border-radius:50px;
-
   cursor:pointer;
-
   color:#111;
 
-  background:
-  linear-gradient(
+  background:linear-gradient(
     90deg,
     #b8860b,
     #fff2a8,
@@ -194,201 +192,112 @@ body{
 
   transition:.3s;
 
-  box-shadow:
-  0 0 25px
-  rgba(212,175,55,.35);
-
+  box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
 .start-btn:hover{
-
   transform:scale(1.08);
-
-  box-shadow:
-  0 0 45px
-  rgba(212,175,55,.7);
-
+  box-shadow:0 0 45px rgba(212,175,55,.7);
 }
 
-/* =========================
-   CELEBRATION
-========================= */
+/* صفحة الاحتفال */
 
 .celebration{
-
   display:none;
-
   min-height:100vh;
-
   padding:40px 20px 100px;
-
   flex-direction:column;
-
   align-items:center;
-
   text-align:center;
-
   animation:fadeIn 1s ease;
-
 }
 
 .celebration h2{
-
   margin-top:40px;
-
   font-size:clamp(28px,7vw,42px);
-
   color:#d4af37;
-
 }
 
 .celebration > p{
-
   color:#aaa;
-
   margin-top:15px;
-
   font-size:17px;
-
 }
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* زر الموسيقى */
 
 .music-btn{
-
   position:fixed;
-
   top:20px;
   right:20px;
-
   z-index:1000;
 
-  border:
-  1px solid
-  rgba(212,175,55,.5);
-
-  background:
-  rgba(0,0,0,.65);
-
+  border:1px solid rgba(212,175,55,.5);
+  background:rgba(0,0,0,.65);
   color:#d4af37;
 
   padding:12px 18px;
-
   border-radius:50px;
-
   font-size:14px;
-
   cursor:pointer;
 
-  backdrop-filter:
-  blur(10px);
-
-  box-shadow:
-  0 0 20px
-  rgba(212,175,55,.15);
-
+  backdrop-filter:blur(10px);
   transition:.3s;
-
 }
 
 .music-btn:hover{
-
   transform:scale(1.08);
-
   background:#d4af37;
-
   color:#000;
-
 }
 
-/* =========================
-   CAKE AREA
-========================= */
+/* الكيكة */
 
 .cake{
-
   margin-top:100px;
-
   position:relative;
-
   width:280px;
-
   height:220px;
-
 }
 
-/* =========================
-   CANDLES
-========================= */
+/* الشموع */
 
 .candles{
-
   position:absolute;
-
   top:-70px;
-
   width:100%;
-
   display:flex;
-
   justify-content:center;
-
   gap:6px;
-
   z-index:5;
-
 }
 
 .candle{
-
   width:10px;
-
   height:58px;
 
-  background:
-  linear-gradient(
-    90deg,
-    #fff,
-    #d4af37
-  );
+  background:linear-gradient(90deg,#fff,#d4af37);
 
   border-radius:5px;
-
   cursor:pointer;
-
   position:relative;
 
-  box-shadow:
-  0 0 10px
-  rgba(255,255,255,.2);
-
   transition:.3s;
-
 }
 
 .candle:hover{
-
-  transform:
-  translateY(-5px);
-
+  transform:translateY(-5px);
 }
 
-/* =========================
-   FLAME
-========================= */
+/* النار */
 
 .flame{
-
   position:absolute;
 
   width:16px;
-
   height:24px;
 
-  background:
-  radial-gradient(
+  background:radial-gradient(
     circle at bottom,
     #fff 0%,
     #ffd000 35%,
@@ -396,57 +305,35 @@ body{
     #ff4d00 100%
   );
 
-  border-radius:
-  60% 40% 60% 40%;
+  border-radius:60% 40% 60% 40%;
 
   top:-27px;
-
   left:-3px;
 
   box-shadow:
+    0 0 12px #ffb300,
+    0 0 25px #ff7b00;
 
-  0 0 12px #ffb300,
-
-  0 0 25px #ff7b00;
-
-  animation:
-  flameMove .6s infinite alternate;
-
+  animation:flameMove .6s infinite alternate;
 }
 
 @keyframes flameMove{
-
   from{
-
-    transform:
-    scale(1)
-    rotate(-3deg);
-
+    transform:scale(1) rotate(-3deg);
   }
 
   to{
-
-    transform:
-    scale(1.18)
-    rotate(5deg);
-
+    transform:scale(1.18) rotate(5deg);
   }
-
 }
 
-/* =========================
-   CAKE
-========================= */
+/* جسم الكيكة */
 
 .cake-top{
-
   width:280px;
-
   height:65px;
 
-  background:
-
-  linear-gradient(
+  background:linear-gradient(
     90deg,
     #9b7200,
     #fff2a8,
@@ -456,27 +343,17 @@ body{
   );
 
   border-radius:50%;
-
   position:absolute;
-
   top:0;
 
-  box-shadow:
-
-  0 0 30px
-  rgba(212,175,55,.35);
-
+  box-shadow:0 0 30px rgba(212,175,55,.35);
 }
 
 .cake-body{
-
   width:280px;
-
   height:145px;
 
-  background:
-
-  linear-gradient(
+  background:linear-gradient(
     90deg,
     #241109,
     #61351f,
@@ -484,43 +361,29 @@ body{
   );
 
   position:absolute;
-
   top:32px;
 
-  border-radius:
-  0 0 30px 30px;
+  border-radius:0 0 30px 30px;
 
-  border:
-  2px solid #d4af37;
+  border:2px solid #d4af37;
 
   box-shadow:
-
-  inset 0 0 30px
-  rgba(0,0,0,.5),
-
-  0 15px 40px
-  rgba(0,0,0,.5);
-
+    inset 0 0 30px rgba(0,0,0,.5),
+    0 15px 40px rgba(0,0,0,.5);
 }
 
-/* =========================
-   BLOW BUTTON
-========================= */
+/* زر النفخ */
 
 .blow-btn{
-
   margin-top:40px;
 
   padding:15px 30px;
 
-  border:
-  1px solid
-  rgba(212,175,55,.5);
+  border:1px solid rgba(212,175,55,.5);
 
   border-radius:50px;
 
-  background:
-  rgba(212,175,55,.12);
+  background:rgba(212,175,55,.12);
 
   color:#fff;
 
@@ -529,25 +392,17 @@ body{
   cursor:pointer;
 
   transition:.3s;
-
 }
 
 .blow-btn:hover{
-
   transform:scale(1.08);
-
   background:#d4af37;
-
   color:#000;
-
 }
 
-/* =========================
-   MESSAGE BUTTON
-========================= */
+/* زر المفاجأة */
 
 .message-btn{
-
   display:none;
 
   margin-top:45px;
@@ -562,9 +417,7 @@ body{
 
   font-size:17px;
 
-  background:
-
-  linear-gradient(
+  background:linear-gradient(
     90deg,
     #b8860b,
     #fff2a8,
@@ -574,25 +427,15 @@ body{
   color:#111;
 
   transition:.3s;
-
-  box-shadow:
-  0 0 25px
-  rgba(212,175,55,.3);
-
 }
 
 .message-btn:hover{
-
   transform:scale(1.08);
-
 }
 
-/* =========================
-   MESSAGE
-========================= */
+/* الرسالة */
 
 .message{
-
   display:none;
 
   margin-top:60px;
@@ -601,73 +444,62 @@ body{
 
   width:min(500px,100%);
 
-  background:
-  rgba(255,255,255,.05);
+  background:rgba(255,255,255,.05);
 
-  border:
-
-  1px solid
-  rgba(212,175,55,.4);
+  border:1px solid rgba(212,175,55,.4);
 
   border-radius:25px;
 
-  backdrop-filter:
-  blur(15px);
+  backdrop-filter:blur(15px);
 
-  box-shadow:
-
-  0 0 50px
-  rgba(212,175,55,.1);
-
-  animation:
-  fadeIn 1s ease;
-
+  animation:fadeIn 1s ease;
 }
 
 .message h3{
-
   color:#d4af37;
-
   font-size:32px;
-
   margin-bottom:25px;
-
 }
 
 .message p{
-
   line-height:2;
-
   color:#ddd;
-
   font-size:17px;
-
 }
 
-/* =========================
-   CONFETTI
-========================= */
+/* الكونفيتي */
 
 .confetti{
-
   position:fixed;
-
   width:10px;
-
   height:10px;
-
   top:-20px;
-
   z-index:999;
-
   pointer-events:none;
+}
+
+/* الموبايل */
+
+@media(max-width:500px){
+
+  .countdown{
+    gap:5px;
+  }
+
+  .countdown div{
+    min-width:55px;
+    padding:10px 5px;
+  }
+
+  .countdown span{
+    font-size:19px;
+  }
 
 }
 
 </style>
 
 </head>
-
 
 <body>
 
@@ -676,157 +508,121 @@ body{
 <div class="stars" id="stars"></div>
 
 
-<!-- =========================
-     INTRO
-========================= -->
+<!-- شاشة البداية -->
 
 <section class="intro" id="intro">
 
   <div class="date">
-
     ✦ 18 • 09 • 2026 ✦
+  </div>
 
+  <div class="small-text">
+    Today is not just another day...
   </div>
 
 
-  <div class="small-text">
+  <!-- العداد -->
 
-    Today is not just another day...
+  <div class="countdown-box">
+
+    <div class="countdown-title">
+      THE COUNTDOWN BEGINS
+    </div>
+
+    <div class="countdown">
+
+      <div>
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+
+      <div>
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+
+      <div>
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      <div>
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+
+    </div>
 
   </div>
 
 
   <h1 class="name">
-
     𝖄𝖆𝖍𝖎𝖆
-
   </h1>
 
 
   <div class="level">
-
     ✦ Welcome To Level 16 ✦
-
   </div>
 
 
-  <button
-  class="start-btn"
-  onclick="startCelebration()">
-
+  <button class="start-btn" onclick="startCelebration()">
     🎉 Start The Celebration
-
   </button>
 
 </section>
 
 
-<!-- =========================
-     CELEBRATION
-========================= -->
+<!-- صفحة الاحتفال -->
 
-<section
-class="celebration"
-id="celebration">
+<section class="celebration" id="celebration">
 
-
-  <!-- زر الموسيقى -->
-
-  <button
-  class="music-btn"
-  onclick="toggleMusic()"
-  id="musicBtn">
-
+  <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
     🎵 Play Music
-
   </button>
 
 
-  <!-- ملف الأغنية -->
-
-  <audio
-  id="birthdayMusic"
-  loop>
-
-    <source
-    src="birthday.mp3"
-    type="audio/mpeg">
-
+  <audio id="birthdayMusic" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
   </audio>
 
 
   <h2>
-
     🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆
-
   </h2>
 
 
   <p>
-
     Make a wish... then blow out the candles 🕯️
-
   </p>
 
 
-  <!-- الكيكة -->
-
   <div class="cake">
 
-
-    <div
-    class="candles"
-    id="candles">
-
-    </div>
-
+    <div class="candles" id="candles"></div>
 
     <div class="cake-top"></div>
 
-
     <div class="cake-body"></div>
-
 
   </div>
 
 
-  <!-- زر إطفاء الشموع -->
-
-  <button
-  class="blow-btn"
-  id="blowBtn"
-  onclick="blowCandles()">
-
+  <button class="blow-btn" id="blowBtn" onclick="blowCandles()">
     💨 Blow Out The Candles
-
   </button>
 
 
-  <!-- زر المفاجأة -->
-
-  <button
-  class="message-btn"
-  id="messageBtn"
-  onclick="showMessage()">
-
+  <button class="message-btn" id="messageBtn" onclick="showMessage()">
     🎁 Open Your Surprise
-
   </button>
 
 
-  <!-- الرسالة -->
-
-  <div
-  class="message"
-  id="message">
-
+  <div class="message" id="message">
 
     <h3>
-
       ✦ Welcome To Level 16 ✦
-
     </h3>
-
 
     <p>
 
@@ -867,9 +663,7 @@ id="celebration">
       <br><br>
 
       <strong>
-
         This is your Level 16.
-
       </strong>
 
       <br><br>
@@ -878,47 +672,30 @@ id="celebration">
 
     </p>
 
-
   </div>
-
 
 </section>
 
 
 <script>
 
-
-/* =========================
-   STARS
-========================= */
+/* النجوم */
 
 function createStars(){
 
-  const stars =
-  document.getElementById("stars");
-
+  const stars = document.getElementById("stars");
 
   for(let i = 0; i < 80; i++){
 
-    const star =
-    document.createElement("div");
+    const star = document.createElement("div");
 
+    star.className = "star";
 
-    star.className =
-    "star";
+    star.style.left = Math.random() * 100 + "%";
 
+    star.style.top = Math.random() * 100 + "%";
 
-    star.style.left =
-    Math.random() * 100 + "%";
-
-
-    star.style.top =
-    Math.random() * 100 + "%";
-
-
-    star.style.animationDelay =
-    Math.random() * 2 + "s";
-
+    star.style.animationDelay = Math.random() * 2 + "s";
 
     stars.appendChild(star);
 
@@ -926,42 +703,90 @@ function createStars(){
 
 }
 
-
 createStars();
 
 
+/* العداد التنازلي */
 
-/* =========================
-   START CELEBRATION
-========================= */
+function updateCountdown(){
+
+  const birthday = new Date("2026-09-18T00:00:00+03:00").getTime();
+
+  const now = new Date().getTime();
+
+  const difference = birthday - now;
+
+
+  if(difference <= 0){
+
+    document.getElementById("days").innerHTML = "🎉";
+    document.getElementById("hours").innerHTML = "🎂";
+    document.getElementById("minutes").innerHTML = "16";
+    document.getElementById("seconds").innerHTML = "🔥";
+
+    return;
+
+  }
+
+
+  const days = Math.floor(
+    difference / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (difference % (1000 * 60 * 60))
+    / (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (difference % (1000 * 60))
+    / 1000
+  );
+
+
+  document.getElementById("days").innerHTML =
+    String(days).padStart(2,"0");
+
+  document.getElementById("hours").innerHTML =
+    String(hours).padStart(2,"0");
+
+  document.getElementById("minutes").innerHTML =
+    String(minutes).padStart(2,"0");
+
+  document.getElementById("seconds").innerHTML =
+    String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* بدء الاحتفال */
 
 function startCelebration(){
 
-  document
-  .getElementById("intro")
-  .style.display = "none";
+  document.getElementById("intro").style.display = "none";
 
-
-  document
-  .getElementById("celebration")
-  .style.display = "flex";
-
+  document.getElementById("celebration").style.display = "flex";
 
   createCandles();
 
 }
 
 
-
-/* =========================
-   CREATE 16 CANDLES
-========================= */
+/* إنشاء 16 شمعة */
 
 function createCandles(){
 
   const candles =
-  document.getElementById("candles");
-
+    document.getElementById("candles");
 
   candles.innerHTML = "";
 
@@ -969,26 +794,23 @@ function createCandles(){
   for(let i = 0; i < 16; i++){
 
     const candle =
-    document.createElement("div");
-
+      document.createElement("div");
 
     candle.className =
-    "candle";
+      "candle";
 
 
     const flame =
-    document.createElement("div");
-
+      document.createElement("div");
 
     flame.className =
-    "flame";
+      "flame";
 
 
     candle.appendChild(flame);
 
 
-    candle.onclick =
-    function(){
+    candle.onclick = function(){
 
       turnOffCandle(flame);
 
@@ -1002,39 +824,27 @@ function createCandles(){
 }
 
 
-
-/* =========================
-   TURN OFF ONE CANDLE
-========================= */
+/* إطفاء شمعة */
 
 function turnOffCandle(flame){
 
   if(flame.style.display === "none"){
-
     return;
-
   }
 
-
-  flame.style.display =
-  "none";
-
+  flame.style.display = "none";
 
   checkCandles();
 
 }
 
 
-
-/* =========================
-   CHECK ALL CANDLES
-========================= */
+/* التأكد من الشموع */
 
 function checkCandles(){
 
   const flames =
-  document.querySelectorAll(".flame");
-
+    document.querySelectorAll(".flame");
 
   let allOff = true;
 
@@ -1042,9 +852,7 @@ function checkCandles(){
   flames.forEach(function(flame){
 
     if(flame.style.display !== "none"){
-
       allOff = false;
-
     }
 
   });
@@ -1052,15 +860,11 @@ function checkCandles(){
 
   if(allOff){
 
-    document
-    .getElementById("messageBtn")
-    .style.display = "block";
+    document.getElementById("messageBtn")
+      .style.display = "block";
 
-
-    document
-    .getElementById("blowBtn")
-    .style.display = "none";
-
+    document.getElementById("blowBtn")
+      .style.display = "none";
 
     celebrationConfetti();
 
@@ -1069,23 +873,19 @@ function checkCandles(){
 }
 
 
-
-/* =========================
-   BLOW ALL CANDLES
-========================= */
+/* إطفاء كل الشموع */
 
 function blowCandles(){
 
   const flames =
-  document.querySelectorAll(".flame");
+    document.querySelectorAll(".flame");
 
 
   flames.forEach(function(flame,index){
 
     setTimeout(function(){
 
-      flame.style.display =
-      "none";
+      flame.style.display = "none";
 
     },index * 80);
 
@@ -1101,25 +901,17 @@ function blowCandles(){
 }
 
 
-
-/* =========================
-   SHOW MESSAGE
-========================= */
+/* إظهار الرسالة */
 
 function showMessage(){
 
   const message =
-  document.getElementById("message");
+    document.getElementById("message");
 
+  message.style.display = "block";
 
-  message.style.display =
-  "block";
-
-
-  document
-  .getElementById("messageBtn")
-  .style.display =
-  "none";
+  document.getElementById("messageBtn")
+    .style.display = "none";
 
 
   celebrationConfetti();
@@ -1128,11 +920,8 @@ function showMessage(){
   setTimeout(function(){
 
     message.scrollIntoView({
-
       behavior:"smooth",
-
       block:"center"
-
     });
 
   },200);
@@ -1140,19 +929,15 @@ function showMessage(){
 }
 
 
-
-/* =========================
-   MUSIC
-========================= */
+/* الموسيقى */
 
 function toggleMusic(){
 
   const music =
-  document.getElementById("birthdayMusic");
-
+    document.getElementById("birthdayMusic");
 
   const btn =
-  document.getElementById("musicBtn");
+    document.getElementById("musicBtn");
 
 
   if(music.paused){
@@ -1161,14 +946,12 @@ function toggleMusic(){
     .then(function(){
 
       btn.innerHTML =
-      "⏸ Pause Music";
+        "⏸ Pause Music";
 
     })
     .catch(function(){
 
-      alert(
-        "Please add birthday.mp3 to your GitHub repository 🎵"
-      );
+      alert("Music couldn't start 🎵");
 
     });
 
@@ -1178,77 +961,63 @@ function toggleMusic(){
 
     music.pause();
 
-
     btn.innerHTML =
-    "🎵 Play Music";
+      "🎵 Play Music";
 
   }
 
 }
 
 
-
-/* =========================
-   CONFETTI
-========================= */
+/* الكونفيتي */
 
 function celebrationConfetti(){
 
   const colors = [
-
     "#d4af37",
-
     "#ffffff",
-
     "#8b5cf6",
-
     "#ec4899",
-
     "#22c55e"
-
   ];
 
 
   for(let i = 0; i < 150; i++){
 
     const piece =
-    document.createElement("div");
-
+      document.createElement("div");
 
     piece.className =
-    "confetti";
+      "confetti";
 
 
     piece.style.left =
-    Math.random() * 100 + "vw";
+      Math.random() * 100 + "vw";
 
 
     piece.style.background =
-    colors[
-      Math.floor(
-        Math.random() *
-        colors.length
-      )
-    ];
+      colors[
+        Math.floor(
+          Math.random() * colors.length
+        )
+      ];
 
 
     piece.style.borderRadius =
-    Math.random() > .5
-    ? "50%"
-    : "0";
+      Math.random() > .5
+      ? "50%"
+      : "0";
 
 
-    document
-    .body
-    .appendChild(piece);
+    document.body.appendChild(piece);
 
 
     const duration =
-    Math.random() * 3 + 2;
+      Math.random() * 3 + 2;
 
 
     const rotate =
-    Math.random() * 1080;
+      Math.random() * 1080;
 
 
     piece.animate(
@@ -1256,35 +1025,24 @@ function celebrationConfetti(){
       [
 
         {
-
           transform:
-          "translateY(0) rotate(0deg)",
-
+            "translateY(0) rotate(0deg)",
           opacity:1
-
         },
 
         {
-
           transform:
-          "translateY(110vh) rotate(" +
-          rotate +
-          "deg)",
-
+            "translateY(110vh) rotate(" +
+            rotate +
+            "deg)",
           opacity:0
-
         }
 
       ],
 
       {
-
-        duration:
-        duration * 1000,
-
-        easing:
-        "linear"
-
+        duration:duration * 1000,
+        easing:"linear"
       }
 
     );
@@ -1300,9 +1058,7 @@ function celebrationConfetti(){
 
 }
 
-
 </script>
 
 </body>
-
 </html>
