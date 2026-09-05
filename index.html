@@ -5,11 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>𝖄𝖆𝖍𝖎𝖆 | Level 16 🎂</title>
-
 
 <style>
 
@@ -23,22 +21,15 @@ content="width=device-width, initial-scale=1.0">
   box-sizing:border-box;
 }
 
-
 html{
   scroll-behavior:smooth;
 }
 
-
 body{
-
   background:#050505;
-
   color:white;
-
   font-family:Arial,sans-serif;
-
   overflow-x:hidden;
-
 }
 
 
@@ -47,22 +38,17 @@ body{
 ================================ */
 
 .background{
-
   position:fixed;
-
   inset:0;
-
   z-index:-3;
 
   background:
-
   radial-gradient(
     circle at top,
     #35194a 0%,
     #160d20 40%,
     #050505 75%
   );
-
 }
 
 
@@ -71,55 +57,32 @@ body{
 ================================ */
 
 .stars{
-
   position:fixed;
-
   inset:0;
-
   z-index:-2;
-
   pointer-events:none;
-
   overflow:hidden;
-
 }
-
 
 .star{
-
   position:absolute;
-
   width:4px;
-
   height:4px;
-
   background:white;
-
   border-radius:50%;
-
-  animation:
-
-  twinkle 2s infinite alternate;
-
+  animation:twinkle 2s infinite alternate;
 }
-
 
 @keyframes twinkle{
 
   from{
-
     opacity:.2;
-
     transform:scale(1);
-
   }
 
   to{
-
     opacity:1;
-
     transform:scale(2);
-
   }
 
 }
@@ -132,23 +95,13 @@ body{
 @keyframes fadeUp{
 
   from{
-
     opacity:0;
-
-    transform:
-
-    translateY(30px);
-
+    transform:translateY(30px);
   }
 
   to{
-
     opacity:1;
-
-    transform:
-
-    translateY(0);
-
+    transform:translateY(0);
   }
 
 }
@@ -157,33 +110,24 @@ body{
 @keyframes glow{
 
   0%{
-
     filter:
-
     drop-shadow(
       0 0 5px #d4af37
     );
-
   }
 
   50%{
-
     filter:
-
     drop-shadow(
       0 0 25px #d4af37
     );
-
   }
 
   100%{
-
     filter:
-
     drop-shadow(
       0 0 5px #d4af37
     );
-
   }
 
 }
@@ -192,27 +136,15 @@ body{
 @keyframes float{
 
   0%{
-
-    transform:
-
-    translateY(0);
-
+    transform:translateY(0);
   }
 
   50%{
-
-    transform:
-
-    translateY(-12px);
-
+    transform:translateY(-12px);
   }
 
   100%{
-
-    transform:
-
-    translateY(0);
-
+    transform:translateY(0);
   }
 
 }
@@ -227,20 +159,16 @@ body{
   min-height:100vh;
 
   display:flex;
-
   flex-direction:column;
 
   justify-content:center;
-
   align-items:center;
 
   text-align:center;
 
   padding:20px;
 
-  animation:
-
-  fadeUp 1.5s ease;
+  animation:fadeUp 1.5s ease;
 
 }
 
@@ -272,29 +200,17 @@ body{
 .name{
 
   font-size:
-
-  clamp(
-    60px,
-    14vw,
-    120px
-  );
+  clamp(60px,14vw,120px);
 
   background:
 
   linear-gradient(
-
     90deg,
-
     #b8860b,
-
     #fff2a8,
-
     #d4af37,
-
     #fff2a8,
-
     #b8860b
-
   );
 
   -webkit-background-clip:text;
@@ -305,9 +221,7 @@ body{
 
   letter-spacing:3px;
 
-  animation:
-
-  glow 3s infinite;
+  animation:glow 3s infinite;
 
 }
 
@@ -358,27 +272,14 @@ body{
   border:
 
   1px solid
-
-  rgba(
-    212,
-    175,
-    55,
-    .4
-  );
+  rgba(212,175,55,.4);
 
   border-radius:15px;
 
   background:
-
-  rgba(
-    255,
-    255,
-    255,
-    .05
-  );
+  rgba(255,255,255,.05);
 
   backdrop-filter:
-
   blur(10px);
 
 }
@@ -418,9 +319,7 @@ body{
 
   border:none;
 
-  padding:
-
-  17px 35px;
+  padding:17px 35px;
 
   border-radius:50px;
 
@@ -433,27 +332,16 @@ body{
   background:
 
   linear-gradient(
-
     90deg,
-
     #b8860b,
-
     #fff2a8,
-
     #d4af37
-
   );
 
   box-shadow:
 
   0 0 30px
-
-  rgba(
-    212,
-    175,
-    55,
-    .4
-  );
+  rgba(212,175,55,.4);
 
   transition:.3s;
 
@@ -462,9 +350,7 @@ body{
 
 .start-btn:hover{
 
-  transform:
-
-  scale(1.08);
+  transform:scale(1.08);
 
 }
 
@@ -485,13 +371,9 @@ body{
 
   text-align:center;
 
-  padding:
+  padding:110px 20px 100px;
 
-  110px 20px 100px;
-
-  animation:
-
-  fadeUp 1s ease;
+  animation:fadeUp 1s ease;
 
 }
 
@@ -501,12 +383,7 @@ body{
   color:#d4af37;
 
   font-size:
-
-  clamp(
-    28px,
-    7vw,
-    45px
-  );
+  clamp(28px,7vw,45px);
 
   margin-bottom:15px;
 
@@ -531,14 +408,11 @@ body{
   position:fixed;
 
   top:25px;
-
-  right:25px;
+  right:20px;
 
   z-index:100;
 
-  padding:
-
-  14px 20px;
+  padding:14px 20px;
 
   border-radius:50px;
 
@@ -547,57 +421,38 @@ body{
   color:#d4af37;
 
   background:
-
-  rgba(
-    0,
-    0,
-    0,
-    .7
-  );
+  rgba(0,0,0,.7);
 
   border:
 
   1px solid
-
-  rgba(
-    212,
-    175,
-    55,
-    .5
-  );
+  rgba(212,175,55,.5);
 
   font-size:15px;
 
   backdrop-filter:
-
   blur(10px);
 
 }
 
 
 /* ===============================
-   CAKE IMAGE
+   CAKE VIDEO
 ================================ */
 
-.cake-image-container{
+.cake-video-container{
 
-  margin-top:100px;
+  margin-top:60px;
 
-  width:
-
-  min(
-    380px,
-    95vw
-  );
+  width:min(430px,95vw);
 
   animation:
-
   float 4s ease-in-out infinite;
 
 }
 
 
-.cake-image{
+.cake-video{
 
   width:100%;
 
@@ -615,127 +470,10 @@ body{
       212,
       175,
       55,
-      .35
+      .4
     )
 
   );
-
-}
-
-
-/* ===============================
-   FALLBACK CAKE
-================================ */
-
-.cake-fallback{
-
-  display:none;
-
-  width:300px;
-
-  height:230px;
-
-  position:relative;
-
-  margin-top:100px;
-
-}
-
-
-.cake-top{
-
-  width:300px;
-
-  height:70px;
-
-  position:absolute;
-
-  top:0;
-
-  background:
-
-  linear-gradient(
-
-    90deg,
-
-    #a87800,
-
-    #fff2a8,
-
-    #d4af37,
-
-    #fff2a8,
-
-    #a87800
-
-  );
-
-  border-radius:50%;
-
-  box-shadow:
-
-  0 0 35px
-
-  rgba(
-    212,
-    175,
-    55,
-    .5
-  );
-
-}
-
-
-.cake-body{
-
-  position:absolute;
-
-  top:35px;
-
-  width:300px;
-
-  height:160px;
-
-  background:
-
-  linear-gradient(
-
-    90deg,
-
-    #281007,
-
-    #70371d,
-
-    #321309
-
-  );
-
-  border:
-
-  3px solid #d4af37;
-
-  border-radius:
-
-  0 0 35px 35px;
-
-}
-
-
-.cake-text{
-
-  position:absolute;
-
-  z-index:2;
-
-  top:100px;
-
-  width:100%;
-
-  color:#fff2a8;
-
-  letter-spacing:6px;
-
-  font-size:25px;
 
 }
 
@@ -754,7 +492,7 @@ body{
 
   flex-wrap:nowrap;
 
-  margin-top:50px;
+  margin-top:35px;
 
   width:100%;
 
@@ -776,13 +514,9 @@ body{
   background:
 
   linear-gradient(
-
     90deg,
-
     white,
-
     #d4af37
-
   );
 
   box-shadow:
@@ -795,6 +529,16 @@ body{
     255,
     .3
   );
+
+  transition:.3s;
+
+}
+
+
+.candle:hover{
+
+  transform:
+  translateY(-5px);
 
 }
 
@@ -814,7 +558,6 @@ body{
   border-radius:
 
   60% 40%
-
   60% 40%;
 
   background:
@@ -859,7 +602,6 @@ body{
     transform:
 
     scale(1)
-
     rotate(-5deg);
 
   }
@@ -869,7 +611,6 @@ body{
     transform:
 
     scale(1.2)
-
     rotate(5deg);
 
   }
@@ -883,24 +624,16 @@ body{
 
 .blow-btn{
 
-  margin-top:60px;
+  margin-top:55px;
 
-  padding:
-
-  17px 35px;
+  padding:17px 35px;
 
   border-radius:50px;
 
   border:
 
   1px solid
-
-  rgba(
-    212,
-    175,
-    55,
-    .6
-  );
+  rgba(212,175,55,.6);
 
   background:
 
@@ -928,9 +661,7 @@ body{
 
   color:#111;
 
-  transform:
-
-  scale(1.06);
+  transform:scale(1.06);
 
 }
 
@@ -945,9 +676,7 @@ body{
 
   margin-top:40px;
 
-  padding:
-
-  17px 35px;
+  padding:17px 35px;
 
   border:none;
 
@@ -960,15 +689,10 @@ body{
   background:
 
   linear-gradient(
-
     90deg,
-
     #b8860b,
-
     #fff2a8,
-
     #d4af37
-
   );
 
   color:#111;
@@ -984,50 +708,27 @@ body{
 
   display:none;
 
-  width:
-
-  min(
-    500px,
-    100%
-  );
+  width:min(500px,100%);
 
   margin-top:50px;
 
-  padding:
-
-  35px 25px;
+  padding:35px 25px;
 
   border-radius:25px;
 
   background:
-
-  rgba(
-    255,
-    255,
-    255,
-    .05
-  );
+  rgba(255,255,255,.05);
 
   border:
 
   1px solid
-
-  rgba(
-    212,
-    175,
-    55,
-    .5
-  );
+  rgba(212,175,55,.5);
 
   backdrop-filter:
-
   blur(15px);
 
   animation:
-
-  fadeUp
-
-  1s ease;
+  fadeUp 1s ease;
 
 }
 
@@ -1101,6 +802,12 @@ body{
 
   }
 
+  .cake-video-container{
+
+    margin-top:50px;
+
+  }
+
 }
 
 </style>
@@ -1124,9 +831,7 @@ id="stars">
 ================================ -->
 
 <section
-
 class="intro"
-
 id="intro">
 
 
@@ -1169,9 +874,7 @@ Today is not just another day...
 <div class="time-box">
 
 <span
-
 class="time-number"
-
 id="days">
 
 00
@@ -1190,9 +893,7 @@ Days
 <div class="time-box">
 
 <span
-
 class="time-number"
-
 id="hours">
 
 00
@@ -1211,9 +912,7 @@ Hours
 <div class="time-box">
 
 <span
-
 class="time-number"
-
 id="minutes">
 
 00
@@ -1232,9 +931,7 @@ Minutes
 <div class="time-box">
 
 <span
-
 class="time-number"
-
 id="seconds">
 
 00
@@ -1256,9 +953,7 @@ Seconds
 
 
 <button
-
 class="start-btn"
-
 onclick="startCelebration()">
 
 🎉 Start The Celebration
@@ -1275,18 +970,13 @@ onclick="startCelebration()">
 ================================ -->
 
 <section
-
 class="celebration"
-
 id="celebration">
 
 
 <button
-
 class="music-btn"
-
 id="musicBtn"
-
 onclick="toggleMusic()">
 
 🎵 Play Music
@@ -1294,16 +984,14 @@ onclick="toggleMusic()">
 </button>
 
 
+<!-- MUSIC -->
+
 <audio
-
 id="birthdayMusic"
-
 loop>
 
 <source
-
 src="birthday.mp3"
-
 type="audio/mpeg">
 
 </audio>
@@ -1326,62 +1014,43 @@ Make a wish... then blow out the candles 🕯️
 
 
 <!-- ===============================
-     CAKE IMAGE
+     CAKE VIDEO
+================================ -->
+
+<div class="cake-video-container">
+
+<video
+
+class="cake-video"
+
+id="cakeVideo"
+
+autoplay
+
+loop
+
+muted
+
+playsinline>
+
+<source
+src="cake.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+</div>
+
+
+
+<!-- ===============================
+     CANDLES
 ================================ -->
 
 <div
-
-class="cake-image-container"
-
-id="cakeImageContainer">
-
-
-<img
-
-src="cake.png"
-
-class="cake-image"
-
-alt="Birthday Cake"
-
-onerror="showFallbackCake()">
-
-
-</div>
-
-
-
-<!-- FALLBACK CAKE -->
-
-<div
-
-class="cake-fallback"
-
-id="cakeFallback">
-
-
-<div class="cake-top"></div>
-
-<div class="cake-body"></div>
-
-
-<div class="cake-text">
-
-✦ HAPPY 16 ✦
-
-</div>
-
-
-</div>
-
-
-
-<!-- CANDLES -->
-
-<div
-
 class="candles"
-
 id="candles">
 
 </div>
@@ -1391,11 +1060,8 @@ id="candles">
 <!-- BLOW BUTTON -->
 
 <button
-
 class="blow-btn"
-
 id="blowBtn"
-
 onclick="blowCandles()">
 
 💨 Blow Out The Candles
@@ -1407,11 +1073,8 @@ onclick="blowCandles()">
 <!-- SURPRISE BUTTON -->
 
 <button
-
 class="message-btn"
-
 id="messageBtn"
-
 onclick="showMessage()">
 
 🎁 Open Your Surprise
@@ -1423,9 +1086,7 @@ onclick="showMessage()">
 <!-- MESSAGE -->
 
 <div
-
 class="message"
-
 id="message">
 
 
@@ -1504,42 +1165,28 @@ This is your Level 16.
 function createStars(){
 
   const stars =
-
   document.getElementById("stars");
 
 
-  for(
-
-    let i = 0;
-
-    i < 100;
-
-    i++
-
-  ){
+  for(let i = 0; i < 100; i++){
 
     const star =
-
     document.createElement("div");
 
 
     star.className =
-
     "star";
 
 
     star.style.left =
-
     Math.random() * 100 + "%";
 
 
     star.style.top =
-
     Math.random() * 100 + "%";
 
 
     star.style.animationDelay =
-
     Math.random() * 3 + "s";
 
 
@@ -1561,21 +1208,14 @@ createStars();
 function updateCountdown(){
 
   const birthday =
-
-  new Date(
-
-    "September 18, 2026 00:00:00"
-
-  ).getTime();
+  new Date("2026-09-18T00:00:00+03:00").getTime();
 
 
   const now =
-
   new Date().getTime();
 
 
   const difference =
-
   birthday - now;
 
 
@@ -1583,22 +1223,22 @@ function updateCountdown(){
 
     document
     .getElementById("days")
-    .innerHTML = "🎂";
+    .innerHTML = "00";
 
 
     document
     .getElementById("hours")
-    .innerHTML = "🎉";
+    .innerHTML = "00";
 
 
     document
     .getElementById("minutes")
-    .innerHTML = "16";
+    .innerHTML = "00";
 
 
     document
     .getElementById("seconds")
-    .innerHTML = "🔥";
+    .innerHTML = "00";
 
 
     return;
@@ -1606,57 +1246,48 @@ function updateCountdown(){
   }
 
 
-  const days =
-
-  Math.floor(
+  const days = Math.floor(
 
     difference /
-
     (1000 * 60 * 60 * 24)
 
   );
 
 
-  const hours =
+  const hours = Math.floor(
 
-  Math.floor(
-
-    (difference %
-
-    (1000 * 60 * 60 * 24))
+    (
+      difference %
+      (1000 * 60 * 60 * 24)
+    )
 
     /
-
     (1000 * 60 * 60)
 
   );
 
 
-  const minutes =
+  const minutes = Math.floor(
 
-  Math.floor(
-
-    (difference %
-
-    (1000 * 60 * 60))
+    (
+      difference %
+      (1000 * 60 * 60)
+    )
 
     /
-
     (1000 * 60)
 
   );
 
 
-  const seconds =
+  const seconds = Math.floor(
 
-  Math.floor(
-
-    (difference %
-
-    (1000 * 60))
+    (
+      difference %
+      (1000 * 60)
+    )
 
     /
-
     1000
 
   );
@@ -1670,63 +1301,34 @@ function updateCountdown(){
   document
   .getElementById("hours")
   .innerHTML =
-
-  String(hours)
-  .padStart(2,"0");
+  String(hours).padStart(2,"0");
 
 
   document
   .getElementById("minutes")
   .innerHTML =
-
-  String(minutes)
-  .padStart(2,"0");
+  String(minutes).padStart(2,"0");
 
 
   document
   .getElementById("seconds")
   .innerHTML =
-
-  String(seconds)
-  .padStart(2,"0");
+  String(seconds).padStart(2,"0");
 
 }
 
 
 updateCountdown();
 
-
 setInterval(
-
   updateCountdown,
-
   1000
-
 );
 
 
 
 /* ===============================
-   FALLBACK CAKE
-================================ */
-
-function showFallbackCake(){
-
-  document
-  .getElementById("cakeImageContainer")
-  .style.display = "none";
-
-
-  document
-  .getElementById("cakeFallback")
-  .style.display = "block";
-
-}
-
-
-
-/* ===============================
-   START
+   START CELEBRATION
 ================================ */
 
 function startCelebration(){
@@ -1744,10 +1346,10 @@ function startCelebration(){
   createCandles();
 
 
-  const music =
+  /* تشغيل الموسيقى */
 
-  document
-  .getElementById("birthdayMusic");
+  const music =
+  document.getElementById("birthdayMusic");
 
 
   music.play()
@@ -1757,7 +1359,6 @@ function startCelebration(){
     document
     .getElementById("musicBtn")
     .innerHTML =
-
     "⏸ Pause Music";
 
   })
@@ -1765,12 +1366,21 @@ function startCelebration(){
   .catch(function(){
 
     console.log(
-
-      "Autoplay blocked"
-
+      "Music needs user interaction"
     );
 
   });
+
+
+  /* تشغيل فيديو الكيكة */
+
+  const video =
+  document.getElementById("cakeVideo");
+
+
+  video.play()
+  .catch(function(){});
+
 
 }
 
@@ -1783,42 +1393,28 @@ function startCelebration(){
 function createCandles(){
 
   const candles =
-
-  document
-  .getElementById("candles");
+  document.getElementById("candles");
 
 
   candles.innerHTML = "";
 
 
-  for(
-
-    let i = 0;
-
-    i < 16;
-
-    i++
-
-  ){
+  for(let i = 0; i < 16; i++){
 
 
     const candle =
-
     document.createElement("div");
 
 
     candle.className =
-
     "candle";
 
 
     const flame =
-
     document.createElement("div");
 
 
     flame.className =
-
     "flame";
 
 
@@ -1826,7 +1422,6 @@ function createCandles(){
 
 
     candle.onclick =
-
     function(){
 
       turnOffCandle(flame);
@@ -1849,11 +1444,8 @@ function createCandles(){
 function turnOffCandle(flame){
 
   if(
-
     flame.style.display ===
-
     "none"
-
   ){
 
     return;
@@ -1862,7 +1454,6 @@ function turnOffCandle(flame){
 
 
   flame.style.display =
-
   "none";
 
 
@@ -1879,36 +1470,24 @@ function turnOffCandle(flame){
 function checkCandles(){
 
   const flames =
-
-  document.querySelectorAll(
-
-    ".flame"
-
-  );
+  document.querySelectorAll(".flame");
 
 
   let allOff = true;
 
 
-  flames.forEach(
+  flames.forEach(function(flame){
 
-    function(flame){
+    if(
+      flame.style.display !==
+      "none"
+    ){
 
-      if(
-
-        flame.style.display !==
-
-        "none"
-
-      ){
-
-        allOff = false;
-
-      }
+      allOff = false;
 
     }
 
-  );
+  });
 
 
   if(allOff){
@@ -1933,50 +1512,30 @@ function checkCandles(){
 
 
 /* ===============================
-   BLOW CANDLES
+   BLOW ALL CANDLES
 ================================ */
 
 function blowCandles(){
 
   const flames =
-
-  document.querySelectorAll(
-
-    ".flame"
-
-  );
+  document.querySelectorAll(".flame");
 
 
-  flames.forEach(
+  flames.forEach(function(flame,index){
 
-    function(flame,index){
+    setTimeout(function(){
 
+      flame.style.display =
+      "none";
 
-      setTimeout(
+    },index * 100);
 
-        function(){
-
-          flame.style.display =
-
-          "none";
-
-        },
-
-        index * 100
-
-      );
-
-    }
-
-  );
+  });
 
 
   setTimeout(
-
     checkCandles,
-
     1800
-
   );
 
 }
@@ -1990,41 +1549,33 @@ function blowCandles(){
 function showMessage(){
 
   const message =
-
-  document
-  .getElementById("message");
+  document.getElementById("message");
 
 
   message.style.display =
-
   "block";
 
 
   document
   .getElementById("messageBtn")
-  .style.display = "none";
+  .style.display =
+  "none";
 
 
   celebrationConfetti();
 
 
-  setTimeout(
+  setTimeout(function(){
 
-    function(){
+    message.scrollIntoView({
 
-      message.scrollIntoView({
+      behavior:"smooth",
 
-        behavior:"smooth",
+      block:"center"
 
-        block:"center"
+    });
 
-      });
-
-    },
-
-    300
-
-  );
+  },300);
 
 }
 
@@ -2037,15 +1588,11 @@ function showMessage(){
 function toggleMusic(){
 
   const music =
-
-  document
-  .getElementById("birthdayMusic");
+  document.getElementById("birthdayMusic");
 
 
   const button =
-
-  document
-  .getElementById("musicBtn");
+  document.getElementById("musicBtn");
 
 
   if(music.paused){
@@ -2053,26 +1600,20 @@ function toggleMusic(){
 
     music.play()
 
-
     .then(function(){
 
       button.innerHTML =
-
       "⏸ Pause Music";
 
     })
 
-
     .catch(function(){
 
       alert(
-
         "Make sure birthday.mp3 is uploaded 🎵"
-
       );
 
     });
-
 
   }
 
@@ -2083,7 +1624,6 @@ function toggleMusic(){
 
 
     button.innerHTML =
-
     "🎵 Play Music";
 
   }
@@ -2101,61 +1641,42 @@ function celebrationConfetti(){
   const colors = [
 
     "#d4af37",
-
     "#ffffff",
-
     "#8b5cf6",
-
     "#ec4899",
-
     "#22c55e"
 
   ];
 
 
-  for(
-
-    let i = 0;
-
-    i < 150;
-
-    i++
-
-  ){
+  for(let i = 0; i < 150; i++){
 
 
     const piece =
-
     document.createElement("div");
 
 
     piece.className =
-
     "confetti";
 
 
     piece.style.left =
-
-    Math.random() *
-
-    100 +
-
-    "vw";
+    Math.random() * 100 + "vw";
 
 
     piece.style.background =
-
     colors[
-
       Math.floor(
-
         Math.random() *
-
         colors.length
-
       )
-
     ];
+
+
+    piece.style.borderRadius =
+    Math.random() > 0.5
+    ? "50%"
+    : "0";
 
 
     document
@@ -2164,36 +1685,25 @@ function celebrationConfetti(){
 
 
     const duration =
-
-    Math.random() *
-
-    3 +
-
-    2;
+    Math.random() * 3 + 2;
 
 
     const rotate =
-
-    Math.random() *
-
-    1080;
+    Math.random() * 1080;
 
 
     piece.animate(
-
 
       [
 
         {
 
           transform:
-
           "translateY(0) rotate(0deg)",
 
           opacity:1
 
         },
-
 
         {
 
@@ -2211,32 +1721,23 @@ function celebrationConfetti(){
 
       ],
 
-
       {
 
         duration:
-
         duration * 1000,
 
         easing:"linear"
 
       }
 
-
     );
 
 
-    setTimeout(
+    setTimeout(function(){
 
-      function(){
+      piece.remove();
 
-        piece.remove();
-
-      },
-
-      duration * 1000
-
-    );
+    },duration * 1000);
 
   }
 
