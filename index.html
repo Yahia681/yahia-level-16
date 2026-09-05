@@ -680,26 +680,35 @@ body{
 <script>
 
 /* النجوم */
+function startCelebration(){
 
-function createStars(){
+  // إخفاء شاشة البداية
+  document.getElementById("intro").style.display = "none";
 
-  const stars = document.getElementById("stars");
+  // إظهار صفحة الاحتفال
+  document.getElementById("celebration").style.display = "flex";
 
-  for(let i = 0; i < 80; i++){
+  // إنشاء الـ 16 شمعة
+  createCandles();
 
-    const star = document.createElement("div");
+  // تشغيل الأغنية تلقائياً بعد الضغط على Start
+  const music = document.getElementById("birthdayMusic");
+  const btn = document.getElementById("musicBtn");
 
-    star.className = "star";
+  music.play()
+  .then(function(){
 
-    star.style.left = Math.random() * 100 + "%";
+    btn.innerHTML = "⏸ Pause Music";
 
-    star.style.top = Math.random() * 100 + "%";
+  })
+  .catch(function(){
 
-    star.style.animationDelay = Math.random() * 2 + "s";
+    btn.innerHTML = "🎵 Play Music";
 
-    stars.appendChild(star);
+  });
 
-  }
+}
+
 
 }
 
