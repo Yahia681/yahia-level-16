@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,18 @@
 
 <style>
 
+/* =========================
+   BASIC
+========================= */
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -21,43 +30,109 @@ body{
   overflow-x:hidden;
 }
 
-/* الخلفية */
+/* =========================
+   BACKGROUND
+========================= */
+
 .background{
   position:fixed;
   inset:0;
-  z-index:-1;
+  z-index:-2;
+
   background:
-  radial-gradient(circle at top,#251334 0%,#080808 55%,#000 100%);
+  radial-gradient(circle at top,#2a1239 0%,#100b18 40%,#050505 75%);
 }
 
-/* شاشة البداية */
+/* النجوم */
+
+.stars{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:#fff;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+  from{
+    opacity:.2;
+    transform:scale(1);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.8);
+  }
+
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
 
 .intro{
   min-height:100vh;
+
   display:flex;
   flex-direction:column;
+
   justify-content:center;
   align-items:center;
+
   text-align:center;
   padding:20px;
+
+  animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
 }
 
 .date{
   color:#d4af37;
+
   letter-spacing:5px;
+
   font-size:14px;
+
   margin-bottom:25px;
 }
 
 .small-text{
   color:#aaa;
+
   font-size:18px;
+
   margin-bottom:15px;
 }
 
-h1{
+.name{
+
   font-size:clamp(55px,12vw,120px);
-  background:linear-gradient(
+
+  background:
+  linear-gradient(
     90deg,
     #b8860b,
     #fff2a8,
@@ -68,27 +143,43 @@ h1{
 
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 
   margin-bottom:20px;
+
   letter-spacing:3px;
 
-  text-shadow:0 0 30px rgba(212,175,55,.25);
+  filter:
+  drop-shadow(
+    0 0 20px
+    rgba(212,175,55,.35)
+  );
+
 }
 
 .level{
   font-size:24px;
+
   color:#ddd;
+
   margin-bottom:40px;
 }
 
-/* زر البداية */
+/* =========================
+   START BUTTON
+========================= */
 
 .start-btn{
+
   border:none;
+
   padding:17px 38px;
+
   font-size:18px;
+
   border-radius:50px;
+
   cursor:pointer;
 
   color:#111;
@@ -106,57 +197,137 @@ h1{
   box-shadow:
   0 0 25px
   rgba(212,175,55,.35);
+
 }
 
 .start-btn:hover{
+
   transform:scale(1.08);
+
   box-shadow:
   0 0 45px
   rgba(212,175,55,.7);
+
 }
 
-/* صفحة الاحتفال */
+/* =========================
+   CELEBRATION
+========================= */
 
 .celebration{
+
   display:none;
+
   min-height:100vh;
-  padding:40px 20px;
+
+  padding:40px 20px 100px;
 
   flex-direction:column;
+
   align-items:center;
+
   text-align:center;
+
+  animation:fadeIn 1s ease;
+
 }
 
 .celebration h2{
-  margin-top:20px;
 
-  font-size:35px;
+  margin-top:40px;
+
+  font-size:clamp(28px,7vw,42px);
 
   color:#d4af37;
+
 }
 
-.celebration p{
+.celebration > p{
+
   color:#aaa;
-  margin-top:10px;
+
+  margin-top:15px;
+
+  font-size:17px;
+
 }
 
-/* الكيكة */
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn{
+
+  position:fixed;
+
+  top:20px;
+  right:20px;
+
+  z-index:1000;
+
+  border:
+  1px solid
+  rgba(212,175,55,.5);
+
+  background:
+  rgba(0,0,0,.65);
+
+  color:#d4af37;
+
+  padding:12px 18px;
+
+  border-radius:50px;
+
+  font-size:14px;
+
+  cursor:pointer;
+
+  backdrop-filter:
+  blur(10px);
+
+  box-shadow:
+  0 0 20px
+  rgba(212,175,55,.15);
+
+  transition:.3s;
+
+}
+
+.music-btn:hover{
+
+  transform:scale(1.08);
+
+  background:#d4af37;
+
+  color:#000;
+
+}
+
+/* =========================
+   CAKE AREA
+========================= */
 
 .cake{
-  margin-top:80px;
+
+  margin-top:100px;
 
   position:relative;
 
-  width:260px;
-  height:180px;
+  width:280px;
+
+  height:220px;
+
 }
 
-/* الشموع */
+/* =========================
+   CANDLES
+========================= */
 
 .candles{
+
   position:absolute;
 
-  top:-80px;
+  top:-70px;
 
   width:100%;
 
@@ -164,17 +335,22 @@ h1{
 
   justify-content:center;
 
-  gap:7px;
+  gap:6px;
+
+  z-index:5;
+
 }
 
 .candle{
+
   width:10px;
-  height:55px;
+
+  height:58px;
 
   background:
   linear-gradient(
     90deg,
-    #eee,
+    #fff,
     #d4af37
   );
 
@@ -183,150 +359,200 @@ h1{
   cursor:pointer;
 
   position:relative;
+
+  box-shadow:
+  0 0 10px
+  rgba(255,255,255,.2);
+
+  transition:.3s;
+
 }
 
-/* النار */
+.candle:hover{
+
+  transform:
+  translateY(-5px);
+
+}
+
+/* =========================
+   FLAME
+========================= */
 
 .flame{
+
   position:absolute;
 
   width:16px;
-  height:22px;
 
-  background:#ffb300;
-
-  border-radius:
-  50% 50% 50% 50%;
-
-  top:-25px;
-  left:-3px;
-
-  box-shadow:
-  0 0 20px #ffb300;
-
-  animation:
-  flame .8s infinite alternate;
-}
-
-@keyframes flame{
-
-  from{
-    transform:scale(1);
-  }
-
-  to{
-    transform:scale(1.2);
-  }
-
-}
-
-/* جسم الكيكة */
-
-.cake-top{
-
-  width:260px;
-  height:50px;
+  height:24px;
 
   background:
-  linear-gradient(
-    90deg,
-    #d4af37,
-    #fff2a8,
-    #b8860b
+  radial-gradient(
+    circle at bottom,
+    #fff 0%,
+    #ffd000 35%,
+    #ff7b00 70%,
+    #ff4d00 100%
   );
 
   border-radius:
-  50%;
+  60% 40% 60% 40%;
+
+  top:-27px;
+
+  left:-3px;
+
+  box-shadow:
+
+  0 0 12px #ffb300,
+
+  0 0 25px #ff7b00;
+
+  animation:
+  flameMove .6s infinite alternate;
+
+}
+
+@keyframes flameMove{
+
+  from{
+
+    transform:
+    scale(1)
+    rotate(-3deg);
+
+  }
+
+  to{
+
+    transform:
+    scale(1.18)
+    rotate(5deg);
+
+  }
+
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-top{
+
+  width:280px;
+
+  height:65px;
+
+  background:
+
+  linear-gradient(
+    90deg,
+    #9b7200,
+    #fff2a8,
+    #d4af37,
+    #fff2a8,
+    #9b7200
+  );
+
+  border-radius:50%;
 
   position:absolute;
 
   top:0;
 
   box-shadow:
-  0 0 25px
-  rgba(212,175,55,.3);
+
+  0 0 30px
+  rgba(212,175,55,.35);
 
 }
 
 .cake-body{
 
-  width:260px;
+  width:280px;
 
-  height:120px;
+  height:145px;
 
   background:
+
   linear-gradient(
     90deg,
-    #301b12,
-    #5a3520,
-    #301b12
+    #241109,
+    #61351f,
+    #3a1c10
   );
 
   position:absolute;
 
-  top:25px;
+  top:32px;
 
   border-radius:
-  0 0 25px 25px;
+  0 0 30px 30px;
 
   border:
   2px solid #d4af37;
 
+  box-shadow:
+
+  inset 0 0 30px
+  rgba(0,0,0,.5),
+
+  0 15px 40px
+  rgba(0,0,0,.5);
+
 }
 
-/* رسالة */
+/* =========================
+   BLOW BUTTON
+========================= */
 
-.message{
+.blow-btn{
 
-  display:none;
+  margin-top:40px;
 
-  margin-top:70px;
-
-  padding:30px;
-
-  max-width:500px;
-
-  background:
-  rgba(255,255,255,.05);
+  padding:15px 30px;
 
   border:
   1px solid
-  rgba(212,175,55,.4);
+  rgba(212,175,55,.5);
 
-  border-radius:20px;
+  border-radius:50px;
 
-  backdrop-filter:
-  blur(10px);
+  background:
+  rgba(212,175,55,.12);
 
-}
+  color:#fff;
 
-.message h3{
+  font-size:17px;
 
-  color:#d4af37;
+  cursor:pointer;
 
-  font-size:30px;
-
-  margin-bottom:20px;
+  transition:.3s;
 
 }
 
-.message p{
+.blow-btn:hover{
 
-  line-height:1.8;
+  transform:scale(1.08);
 
-  color:#ddd;
+  background:#d4af37;
+
+  color:#000;
 
 }
 
-/* زر الرسالة */
+/* =========================
+   MESSAGE BUTTON
+========================= */
 
 .message-btn{
 
   display:none;
 
-  margin-top:50px;
+  margin-top:45px;
 
-  padding:15px 30px;
+  padding:16px 32px;
 
   border:none;
 
@@ -336,9 +562,105 @@ h1{
 
   font-size:17px;
 
-  background:#d4af37;
+  background:
 
-  color:black;
+  linear-gradient(
+    90deg,
+    #b8860b,
+    #fff2a8,
+    #d4af37
+  );
+
+  color:#111;
+
+  transition:.3s;
+
+  box-shadow:
+  0 0 25px
+  rgba(212,175,55,.3);
+
+}
+
+.message-btn:hover{
+
+  transform:scale(1.08);
+
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+
+  display:none;
+
+  margin-top:60px;
+
+  padding:35px 25px;
+
+  width:min(500px,100%);
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+
+  1px solid
+  rgba(212,175,55,.4);
+
+  border-radius:25px;
+
+  backdrop-filter:
+  blur(15px);
+
+  box-shadow:
+
+  0 0 50px
+  rgba(212,175,55,.1);
+
+  animation:
+  fadeIn 1s ease;
+
+}
+
+.message h3{
+
+  color:#d4af37;
+
+  font-size:32px;
+
+  margin-bottom:25px;
+
+}
+
+.message p{
+
+  line-height:2;
+
+  color:#ddd;
+
+  font-size:17px;
+
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+
+  position:fixed;
+
+  width:10px;
+
+  height:10px;
+
+  top:-20px;
+
+  z-index:999;
+
+  pointer-events:none;
 
 }
 
@@ -346,280 +668,638 @@ h1{
 
 </head>
 
+
 <body>
 
 <div class="background"></div>
 
+<div class="stars" id="stars"></div>
 
-<!-- شاشة البداية -->
+
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro" id="intro">
 
-<div class="date">
-✦ 18 • 09 • 2026 ✦
-</div>
+  <div class="date">
 
-<div class="small-text">
-Today is not just another day...
-</div>
+    ✦ 18 • 09 • 2026 ✦
 
-<h1>
-𝖄𝖆𝖍𝖎𝖆
-</h1>
+  </div>
 
-<div class="level">
-✦ Welcome To Level 16 ✦
-</div>
 
-<button class="start-btn" onclick="startCelebration()">
-🎉 Start The Celebration
-</button>
+  <div class="small-text">
+
+    Today is not just another day...
+
+  </div>
+
+
+  <h1 class="name">
+
+    𝖄𝖆𝖍𝖎𝖆
+
+  </h1>
+
+
+  <div class="level">
+
+    ✦ Welcome To Level 16 ✦
+
+  </div>
+
+
+  <button
+  class="start-btn"
+  onclick="startCelebration()">
+
+    🎉 Start The Celebration
+
+  </button>
 
 </section>
 
 
-<!-- الاحتفال -->
+<!-- =========================
+     CELEBRATION
+========================= -->
 
-<section class="celebration" id="celebration">
-
-<h2>
-🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆
-</h2>
-
-<p>
-Make a wish... then blow out the candles 🕯️
-</p>
+<section
+class="celebration"
+id="celebration">
 
 
-<div class="cake">
+  <!-- زر الموسيقى -->
 
-<div class="candles" id="candles">
+  <button
+  class="music-btn"
+  onclick="toggleMusic()"
+  id="musicBtn">
 
-<!-- الشموع ستظهر هنا -->
+    🎵 Play Music
 
-</div>
-
-
-<div class="cake-top"></div>
-
-<div class="cake-body"></div>
-
-</div>
+  </button>
 
 
-<button
-class="message-btn"
-id="messageBtn"
-onclick="showMessage()">
+  <!-- ملف الأغنية -->
 
-🎁 Open Your Surprise
+  <audio
+  id="birthdayMusic"
+  loop>
 
-</button>
+    <source
+    src="birthday.mp3"
+    type="audio/mpeg">
+
+  </audio>
 
 
-<div
-class="message"
-id="message">
+  <h2>
 
-<h3>
-✦ Welcome To Level 16 ✦
-</h3>
+    🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆
 
-<p>
+  </h2>
 
-A new year has begun...
 
-<br><br>
+  <p>
 
-New memories.
-New challenges.
-New dreams.
+    Make a wish... then blow out the candles 🕯️
 
-<br><br>
+  </p>
 
-And this is only the beginning.
 
-<br><br>
+  <!-- الكيكة -->
 
-🚀 Keep building.
-💻 Keep creating.
-🔥 Keep going.
+  <div class="cake">
 
-</p>
 
-</div>
+    <div
+    class="candles"
+    id="candles">
+
+    </div>
+
+
+    <div class="cake-top"></div>
+
+
+    <div class="cake-body"></div>
+
+
+  </div>
+
+
+  <!-- زر إطفاء الشموع -->
+
+  <button
+  class="blow-btn"
+  id="blowBtn"
+  onclick="blowCandles()">
+
+    💨 Blow Out The Candles
+
+  </button>
+
+
+  <!-- زر المفاجأة -->
+
+  <button
+  class="message-btn"
+  id="messageBtn"
+  onclick="showMessage()">
+
+    🎁 Open Your Surprise
+
+  </button>
+
+
+  <!-- الرسالة -->
+
+  <div
+  class="message"
+  id="message">
+
+
+    <h3>
+
+      ✦ Welcome To Level 16 ✦
+
+    </h3>
+
+
+    <p>
+
+      A new year has begun... 🎂
+
+      <br><br>
+
+      16 years of memories.
+
+      <br>
+
+      And a whole new chapter begins now.
+
+      <br><br>
+
+      New dreams. ✨
+
+      <br>
+
+      New challenges. 🚀
+
+      <br>
+
+      New memories. 🖤
+
+      <br><br>
+
+      💻 Keep building.
+
+      <br>
+
+      🔥 Keep creating.
+
+      <br>
+
+      🚀 Keep going.
+
+      <br><br>
+
+      <strong>
+
+        This is your Level 16.
+
+      </strong>
+
+      <br><br>
+
+      🎉 Happy Birthday, Yahia! 🎉
+
+    </p>
+
+
+  </div>
+
 
 </section>
 
 
 <script>
 
-/* بدء الاحتفال */
+
+/* =========================
+   STARS
+========================= */
+
+function createStars(){
+
+  const stars =
+  document.getElementById("stars");
+
+
+  for(let i = 0; i < 80; i++){
+
+    const star =
+    document.createElement("div");
+
+
+    star.className =
+    "star";
+
+
+    star.style.left =
+    Math.random() * 100 + "%";
+
+
+    star.style.top =
+    Math.random() * 100 + "%";
+
+
+    star.style.animationDelay =
+    Math.random() * 2 + "s";
+
+
+    stars.appendChild(star);
+
+  }
+
+}
+
+
+createStars();
+
+
+
+/* =========================
+   START CELEBRATION
+========================= */
 
 function startCelebration(){
 
-document.getElementById("intro").style.display="none";
+  document
+  .getElementById("intro")
+  .style.display = "none";
 
-document.getElementById("celebration").style.display="flex";
 
-createCandles();
+  document
+  .getElementById("celebration")
+  .style.display = "flex";
+
+
+  createCandles();
 
 }
 
 
-/* إنشاء 16 شمعة */
+
+/* =========================
+   CREATE 16 CANDLES
+========================= */
 
 function createCandles(){
 
-const candles=document.getElementById("candles");
-
-for(let i=0;i<16;i++){
-
-const candle=document.createElement("div");
-
-candle.className="candle";
-
-const flame=document.createElement("div");
-
-flame.className="flame";
-
-candle.appendChild(flame);
+  const candles =
+  document.getElementById("candles");
 
 
-/* إطفاء الشمعة */
+  candles.innerHTML = "";
 
-candle.onclick=function(){
 
-if(flame.style.display!=="none"){
+  for(let i = 0; i < 16; i++){
 
-flame.style.display="none";
+    const candle =
+    document.createElement("div");
 
-checkCandles();
+
+    candle.className =
+    "candle";
+
+
+    const flame =
+    document.createElement("div");
+
+
+    flame.className =
+    "flame";
+
+
+    candle.appendChild(flame);
+
+
+    candle.onclick =
+    function(){
+
+      turnOffCandle(flame);
+
+    };
+
+
+    candles.appendChild(candle);
+
+  }
 
 }
 
-};
 
 
-candles.appendChild(candle);
+/* =========================
+   TURN OFF ONE CANDLE
+========================= */
+
+function turnOffCandle(flame){
+
+  if(flame.style.display === "none"){
+
+    return;
+
+  }
+
+
+  flame.style.display =
+  "none";
+
+
+  checkCandles();
 
 }
 
-}
 
 
-/* التأكد من إطفاء كل الشموع */
+/* =========================
+   CHECK ALL CANDLES
+========================= */
 
 function checkCandles(){
 
-const flames=document.querySelectorAll(".flame");
+  const flames =
+  document.querySelectorAll(".flame");
 
-let allOff=true;
 
-flames.forEach(function(flame){
+  let allOff = true;
 
-if(flame.style.display!=="none"){
 
-allOff=false;
+  flames.forEach(function(flame){
+
+    if(flame.style.display !== "none"){
+
+      allOff = false;
+
+    }
+
+  });
+
+
+  if(allOff){
+
+    document
+    .getElementById("messageBtn")
+    .style.display = "block";
+
+
+    document
+    .getElementById("blowBtn")
+    .style.display = "none";
+
+
+    celebrationConfetti();
+
+  }
 
 }
 
-});
 
 
-if(allOff){
+/* =========================
+   BLOW ALL CANDLES
+========================= */
 
-document.getElementById("messageBtn").style.display="block";
+function blowCandles(){
+
+  const flames =
+  document.querySelectorAll(".flame");
+
+
+  flames.forEach(function(flame,index){
+
+    setTimeout(function(){
+
+      flame.style.display =
+      "none";
+
+    },index * 80);
+
+  });
+
+
+  setTimeout(function(){
+
+    checkCandles();
+
+  },1400);
 
 }
 
-}
 
 
-/* إظهار المفاجأة */
+/* =========================
+   SHOW MESSAGE
+========================= */
 
 function showMessage(){
 
-document.getElementById("message").style.display="block";
+  const message =
+  document.getElementById("message");
 
-document.getElementById("messageBtn").style.display="none";
 
-confetti();
+  message.style.display =
+  "block";
+
+
+  document
+  .getElementById("messageBtn")
+  .style.display =
+  "none";
+
+
+  celebrationConfetti();
+
+
+  setTimeout(function(){
+
+    message.scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"center"
+
+    });
+
+  },200);
+
+}
+
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic(){
+
+  const music =
+  document.getElementById("birthdayMusic");
+
+
+  const btn =
+  document.getElementById("musicBtn");
+
+
+  if(music.paused){
+
+    music.play()
+    .then(function(){
+
+      btn.innerHTML =
+      "⏸ Pause Music";
+
+    })
+    .catch(function(){
+
+      alert(
+        "Please add birthday.mp3 to your GitHub repository 🎵"
+      );
+
+    });
+
+  }
+
+  else{
+
+    music.pause();
+
+
+    btn.innerHTML =
+    "🎵 Play Music";
+
+  }
 
 }
 
 
-/* كونفيتي بسيط */
 
-function confetti(){
+/* =========================
+   CONFETTI
+========================= */
 
-for(let i=0;i<100;i++){
+function celebrationConfetti(){
 
-const piece=document.createElement("div");
+  const colors = [
 
-piece.style.position="fixed";
+    "#d4af37",
 
-piece.style.width="8px";
+    "#ffffff",
 
-piece.style.height="8px";
+    "#8b5cf6",
 
-piece.style.background=
-[
-"#d4af37",
-"#ffffff",
-"#8b5cf6",
-"#ec4899"
-][Math.floor(Math.random()*4)];
+    "#ec4899",
 
-piece.style.left=
-Math.random()*100+"vw";
+    "#22c55e"
 
-piece.style.top="-10px";
-
-piece.style.borderRadius="2px";
-
-piece.style.zIndex="999";
-
-document.body.appendChild(piece);
+  ];
 
 
-const duration=
-Math.random()*3+2;
+  for(let i = 0; i < 150; i++){
+
+    const piece =
+    document.createElement("div");
 
 
-piece.animate(
+    piece.className =
+    "confetti";
 
-[
-{
-transform:"translateY(0) rotate(0deg)"
-},
 
-{
-transform:
-"translateY(110vh) rotate(720deg)"
+    piece.style.left =
+    Math.random() * 100 + "vw";
+
+
+    piece.style.background =
+    colors[
+      Math.floor(
+        Math.random() *
+        colors.length
+      )
+    ];
+
+
+    piece.style.borderRadius =
+    Math.random() > .5
+    ? "50%"
+    : "0";
+
+
+    document
+    .body
+    .appendChild(piece);
+
+
+    const duration =
+    Math.random() * 3 + 2;
+
+
+    const rotate =
+    Math.random() * 1080;
+
+
+    piece.animate(
+
+      [
+
+        {
+
+          transform:
+          "translateY(0) rotate(0deg)",
+
+          opacity:1
+
+        },
+
+        {
+
+          transform:
+          "translateY(110vh) rotate(" +
+          rotate +
+          "deg)",
+
+          opacity:0
+
+        }
+
+      ],
+
+      {
+
+        duration:
+        duration * 1000,
+
+        easing:
+        "linear"
+
+      }
+
+    );
+
+
+    setTimeout(function(){
+
+      piece.remove();
+
+    },duration * 1000);
+
+  }
+
 }
 
-],
-
-{
-duration:duration*1000,
-
-easing:"linear"
-
-}
-
-);
-
-
-setTimeout(function(){
-
-piece.remove();
-
-},duration*1000);
-
-}
-
-}
 
 </script>
 
