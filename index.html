@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>𝖄𝖆𝖍𝖎𝖆 | Level 16 🎂</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* الخلفية */
+.background{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+  radial-gradient(circle at top,#251334 0%,#080808 55%,#000 100%);
+}
+
+/* شاشة البداية */
+
+.intro{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.date{
+  color:#d4af37;
+  letter-spacing:5px;
+  font-size:14px;
+  margin-bottom:25px;
+}
+
+.small-text{
+  color:#aaa;
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(55px,12vw,120px);
+  background:linear-gradient(
+    90deg,
+    #b8860b,
+    #fff2a8,
+    #d4af37,
+    #fff2a8,
+    #b8860b
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  margin-bottom:20px;
+  letter-spacing:3px;
+
+  text-shadow:0 0 30px rgba(212,175,55,.25);
+}
+
+.level{
+  font-size:24px;
+  color:#ddd;
+  margin-bottom:40px;
+}
+
+/* زر البداية */
+
+.start-btn{
+  border:none;
+  padding:17px 38px;
+  font-size:18px;
+  border-radius:50px;
+  cursor:pointer;
+
+  color:#111;
+
+  background:
+  linear-gradient(
+    90deg,
+    #b8860b,
+    #fff2a8,
+    #d4af37
+  );
+
+  transition:.3s;
+
+  box-shadow:
+  0 0 25px
+  rgba(212,175,55,.35);
+}
+
+.start-btn:hover{
+  transform:scale(1.08);
+  box-shadow:
+  0 0 45px
+  rgba(212,175,55,.7);
+}
+
+/* صفحة الاحتفال */
+
+.celebration{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.celebration h2{
+  margin-top:20px;
+
+  font-size:35px;
+
+  color:#d4af37;
+}
+
+.celebration p{
+  color:#aaa;
+  margin-top:10px;
+}
+
+/* الكيكة */
+
+.cake{
+  margin-top:80px;
+
+  position:relative;
+
+  width:260px;
+  height:180px;
+}
+
+/* الشموع */
+
+.candles{
+  position:absolute;
+
+  top:-80px;
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:7px;
+}
+
+.candle{
+  width:10px;
+  height:55px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #eee,
+    #d4af37
+  );
+
+  border-radius:5px;
+
+  cursor:pointer;
+
+  position:relative;
+}
+
+/* النار */
+
+.flame{
+  position:absolute;
+
+  width:16px;
+  height:22px;
+
+  background:#ffb300;
+
+  border-radius:
+  50% 50% 50% 50%;
+
+  top:-25px;
+  left:-3px;
+
+  box-shadow:
+  0 0 20px #ffb300;
+
+  animation:
+  flame .8s infinite alternate;
+}
+
+@keyframes flame{
+
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.2);
+  }
+
+}
+
+/* جسم الكيكة */
+
+.cake-top{
+
+  width:260px;
+  height:50px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #d4af37,
+    #fff2a8,
+    #b8860b
+  );
+
+  border-radius:
+  50%;
+
+  position:absolute;
+
+  top:0;
+
+  box-shadow:
+  0 0 25px
+  rgba(212,175,55,.3);
+
+}
+
+.cake-body{
+
+  width:260px;
+
+  height:120px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #301b12,
+    #5a3520,
+    #301b12
+  );
+
+  position:absolute;
+
+  top:25px;
+
+  border-radius:
+  0 0 25px 25px;
+
+  border:
+  2px solid #d4af37;
+
+}
+
+/* رسالة */
+
+.message{
+
+  display:none;
+
+  margin-top:70px;
+
+  padding:30px;
+
+  max-width:500px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid
+  rgba(212,175,55,.4);
+
+  border-radius:20px;
+
+  backdrop-filter:
+  blur(10px);
+
+}
+
+.message h3{
+
+  color:#d4af37;
+
+  font-size:30px;
+
+  margin-bottom:20px;
+
+}
+
+.message p{
+
+  line-height:1.8;
+
+  color:#ddd;
+
+}
+
+/* زر الرسالة */
+
+.message-btn{
+
+  display:none;
+
+  margin-top:50px;
+
+  padding:15px 30px;
+
+  border:none;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+  font-size:17px;
+
+  background:#d4af37;
+
+  color:black;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+
+<!-- شاشة البداية -->
+
+<section class="intro" id="intro">
+
+<div class="date">
+✦ 18 • 09 • 2026 ✦
+</div>
+
+<div class="small-text">
+Today is not just another day...
+</div>
+
+<h1>
+𝖄𝖆𝖍𝖎𝖆
+</h1>
+
+<div class="level">
+✦ Welcome To Level 16 ✦
+</div>
+
+<button class="start-btn" onclick="startCelebration()">
+🎉 Start The Celebration
+</button>
+
+</section>
+
+
+<!-- الاحتفال -->
+
+<section class="celebration" id="celebration">
+
+<h2>
+🎂 Happy Birthday 𝖄𝖆𝖍𝖎𝖆
+</h2>
+
+<p>
+Make a wish... then blow out the candles 🕯️
+</p>
+
+
+<div class="cake">
+
+<div class="candles" id="candles">
+
+<!-- الشموع ستظهر هنا -->
+
+</div>
+
+
+<div class="cake-top"></div>
+
+<div class="cake-body"></div>
+
+</div>
+
+
+<button
+class="message-btn"
+id="messageBtn"
+onclick="showMessage()">
+
+🎁 Open Your Surprise
+
+</button>
+
+
+<div
+class="message"
+id="message">
+
+<h3>
+✦ Welcome To Level 16 ✦
+</h3>
+
+<p>
+
+A new year has begun...
+
+<br><br>
+
+New memories.
+New challenges.
+New dreams.
+
+<br><br>
+
+And this is only the beginning.
+
+<br><br>
+
+🚀 Keep building.
+💻 Keep creating.
+🔥 Keep going.
+
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* بدء الاحتفال */
+
+function startCelebration(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("celebration").style.display="flex";
+
+createCandles();
+
+}
+
+
+/* إنشاء 16 شمعة */
+
+function createCandles(){
+
+const candles=document.getElementById("candles");
+
+for(let i=0;i<16;i++){
+
+const candle=document.createElement("div");
+
+candle.className="candle";
+
+const flame=document.createElement("div");
+
+flame.className="flame";
+
+candle.appendChild(flame);
+
+
+/* إطفاء الشمعة */
+
+candle.onclick=function(){
+
+if(flame.style.display!=="none"){
+
+flame.style.display="none";
+
+checkCandles();
+
+}
+
+};
+
+
+candles.appendChild(candle);
+
+}
+
+}
+
+
+/* التأكد من إطفاء كل الشموع */
+
+function checkCandles(){
+
+const flames=document.querySelectorAll(".flame");
+
+let allOff=true;
+
+flames.forEach(function(flame){
+
+if(flame.style.display!=="none"){
+
+allOff=false;
+
+}
+
+});
+
+
+if(allOff){
+
+document.getElementById("messageBtn").style.display="block";
+
+}
+
+}
+
+
+/* إظهار المفاجأة */
+
+function showMessage(){
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("messageBtn").style.display="none";
+
+confetti();
+
+}
+
+
+/* كونفيتي بسيط */
+
+function confetti(){
+
+for(let i=0;i<100;i++){
+
+const piece=document.createElement("div");
+
+piece.style.position="fixed";
+
+piece.style.width="8px";
+
+piece.style.height="8px";
+
+piece.style.background=
+[
+"#d4af37",
+"#ffffff",
+"#8b5cf6",
+"#ec4899"
+][Math.floor(Math.random()*4)];
+
+piece.style.left=
+Math.random()*100+"vw";
+
+piece.style.top="-10px";
+
+piece.style.borderRadius="2px";
+
+piece.style.zIndex="999";
+
+document.body.appendChild(piece);
+
+
+const duration=
+Math.random()*3+2;
+
+
+piece.animate(
+
+[
+{
+transform:"translateY(0) rotate(0deg)"
+},
+
+{
+transform:
+"translateY(110vh) rotate(720deg)"
+}
+
+],
+
+{
+duration:duration*1000,
+
+easing:"linear"
+
+}
+
+);
+
+
+setTimeout(function(){
+
+piece.remove();
+
+},duration*1000);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
